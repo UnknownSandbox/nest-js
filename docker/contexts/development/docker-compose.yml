@@ -1,0 +1,49 @@
+version: '2'
+
+services:
+  network:
+    restart: always
+    build:
+      context: ./../../../src/network
+    volumes:
+      - ./../../../src/network:/app
+    ports:
+      - "80:80"
+    links:
+      - api
+    env_file:
+      - ./env/common.env
+      - ./env/network.env
+
+  api:
+    restart: always
+    build:
+      context: ./../../../src/backend
+    volumes:
+      - ./../../../src/backend:/app
+    ports:
+      - "4040:4040"
+      - "5858:5858"
+    links:
+      - postgres
+      - redis
+    env_file:
+      - ./env/common.env
+      - ./env/api.env
+
+  redis:
+    restart: always
+    image: redis
+    mem_limit: 2g
+    memswap_limit: 2g
+    ports:
+      - 6379:6379
+
+  postgres:
+    restart: always
+    image: postgres:latest
+    env_file:
+      - ./env/common.env
+      - ./env/api.env
+    ports:
+      - 5432:5432
