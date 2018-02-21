@@ -4,6 +4,6 @@ import { Get, Controller } from '@nestjs/common';
 export class AppController {
 	@Get()
 	root(): string {
-    return 'Nest';
+    return 'Unknown Nest';
   }
 }

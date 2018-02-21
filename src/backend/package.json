@@ -9,7 +9,9 @@
     "start:prod": "yarn && tsc && node dist/main.js"
   },
   "dependencies": {
+    "automapper-ts": "1.9.0",
     "@nestjs/common": "^4.5.9",
+    "@nestjs/typeorm": "2.0.0",
     "@nestjs/core": "^4.5.10",
     "@nestjs/microservices": "^4.5.8",
     "@nestjs/testing": "^4.5.5",
@@ -17,7 +19,8 @@
     "redis": "^2.7.1",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^5.5.6",
-    "typescript": "^2.6.2"
+    "typescript": "2.7.0-rc",
+    "typeorm": "0.1.12"
   },
   "devDependencies": {
     "@types/node": "^9.3.0",
