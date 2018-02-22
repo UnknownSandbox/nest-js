@@ -10,7 +10,7 @@ export class UserRepository extends Repository<UserEntity> implements IUserRepos
   }
 
   async getUserByEmail(email: string) {
-    return await this._repository.find({
+    return await this._repository.findOne({
       email: email
     });
   }

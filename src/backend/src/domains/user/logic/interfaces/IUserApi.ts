@@ -4,4 +4,5 @@ export interface IUserApi {
 
   signUpNewUser(user: UserDto);
   getAllUsers();
+  getUserByEmail(email: string);
 }

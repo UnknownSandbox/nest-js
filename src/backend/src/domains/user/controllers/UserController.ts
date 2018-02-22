@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Inject, Post, Req, UsePipes, ValidationPipe} from '@nestjs/common';
+import {Body, Controller, Get, Inject, Param, Post, Req, UsePipes, ValidationPipe} from '@nestjs/common';
 import {UserApi as UserApi} from "../logic";
 import {UserDto} from "../dto/UserDto";
 import {ApiOperation} from "@nestjs/swagger";
@@ -23,5 +23,13 @@ export class UsersController {
   async findAll() {
     return this._userLogic.getAllUsers();
   }
+
+
+  @Get("/byEmail/:email")
+  @ApiOperation({ title: 'Get user by email' })
+  async getUserByEmail(@Param("email") email: string) {
+    return this._userLogic.getUserByEmail(email);
+  }
+
 
 }

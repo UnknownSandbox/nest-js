@@ -23,4 +23,8 @@ export class UserApi implements IUserApi {
   async getAllUsers() {
     return await this._userRepository.findAll();
   }
+
+  async getUserByEmail(email: string) {
+    return this._userRepository.getUserByEmail(email);
+  }
 }
