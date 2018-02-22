@@ -1,9 +1,19 @@
-import { IsInt, IsDate } from 'class-validator';
+import { IsInt, IsDate, IsOptional } from 'class-validator';
+import {ApiModelProperty} from "@nestjs/swagger";
 
 export abstract class DTO {
-  @IsInt() readonly id: number;
+  @ApiModelProperty()
+  @IsInt()
+  @IsOptional()
+  readonly id: number;
 
-  @IsDate() readonly createDate: number;
+  @ApiModelProperty()
+  @IsDate()
+  @IsOptional()
+  readonly createDate: number;
 
-  @IsDate() readonly updateDate: number;
+  @ApiModelProperty()
+  @IsDate()
+  @IsOptional()
+  readonly updateDate: number;
 }

@@ -1,11 +1,12 @@
 import {Repository} from "../../../../infrastructure/domains/repositories/typesql/Repository";
-import {UserEntity} from "./entities/User";
+import {UserEntity} from "./entities/UserEntity";
 import {IUserRepository} from "../interfaces/IUserRepository";
+import {Connection as ORMConnection} from "typeorm";
 
-export class UserRepository extends Repository<UserEntity> implements IUserRepository{
+export class UserRepository extends Repository<UserEntity> implements IUserRepository {
 
-  constructor() {
-    super(UserEntity);
+  constructor(connection: ORMConnection) {
+    super(connection, UserEntity.name);
   }
 
   async getUserByEmail(email: string) {
@@ -13,5 +14,6 @@ export class UserRepository extends Repository<UserEntity> implements IUserRepos
       email: email
     });
   }
+
 
 }

@@ -9,18 +9,21 @@
     "start:prod": "yarn && tsc && node dist/main.js"
   },
   "dependencies": {
-    "automapper-ts": "1.9.0",
-    "@nestjs/common": "^4.5.9",
+    "@nestjs/common": "4.5.9",
+    "@nestjs/swagger": "1.1.4",
     "@nestjs/typeorm": "2.0.0",
-    "@nestjs/core": "^4.5.10",
-    "@nestjs/microservices": "^4.5.8",
-    "@nestjs/testing": "^4.5.5",
-    "@nestjs/websockets": "^4.5.8",
-    "redis": "^2.7.1",
-    "reflect-metadata": "^0.1.12",
-    "rxjs": "^5.5.6",
+    "@nestjs/core": "4.5.10",
+    "@nestjs/microservices": "4.5.8",
+    "@nestjs/testing": "4.5.5",
+    "@nestjs/websockets": "4.5.8",
+    "redis": "2.7.1",
+    "reflect-metadata": "0.1.12",
+    "rxjs": "5.5.6",
     "typescript": "2.7.0-rc",
-    "typeorm": "0.1.12"
+    "typeorm": "0.1.12",
+    "pg": "7.4.1",
+    "joi": "10.0.6",
+    "dotenv": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^9.3.0",

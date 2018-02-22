@@ -1,1 +1,1 @@
-export * from "./internal/Api";
+export * from "./internal/UserApi";

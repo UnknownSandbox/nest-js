@@ -1,6 +1,5 @@
 import {IRepository} from "../interfaces/IRepository";
-import {Connection, ConnectionManager, getRepository, Repository as ORMRepository} from "typeorm";
-import { InjectRepository } from '@nestjs/typeorm';
+import {Repository as ORMRepository, Connection as ORMConnection, Repository as ORMRepoitory} from "typeorm";
 
 /**
  * @TODO https://github.com/Microsoft/TypeScript/issues/21671
@@ -8,8 +7,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 export abstract class Repository<Entity> implements IRepository<Entity> {
   protected _repository: ORMRepository<Entity>;
 
-  constructor(entityClass: any) {
-    this._repository = getRepository(entityClass);
+  constructor( connection: ORMConnection, entityName: string) {
+    this._repository = connection.getRepository(entityName);
   }
 
   async getById(id: number) {

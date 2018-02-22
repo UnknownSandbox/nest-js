@@ -1,4 +1,7 @@
-import {PrimaryGeneratedColumn, Entity as ORMEntityDecorator, Column} from "typeorm";
+import {
+  PrimaryGeneratedColumn, Entity as ORMEntityDecorator, Column, CreateDateColumn,
+  UpdateDateColumn
+} from "typeorm";
 import {IEntity} from "../interfaces/IEntity";
 import {DTO} from "../../DTO";
 
@@ -12,10 +15,10 @@ export abstract class Entity implements IEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  createDate: Date;
+  @CreateDateColumn()
+  createDate;
 
-  @Column()
-  updateDate: Date;
+  @UpdateDateColumn()
+  updateDate;
 
 }

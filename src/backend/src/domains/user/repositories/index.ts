@@ -1,2 +1,2 @@
 export * from "./typesql/UserRepository";
-export * from "./typesql/entities/User";
+export * from "./typesql/entities/UserEntity";

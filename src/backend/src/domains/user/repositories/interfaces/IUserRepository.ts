@@ -1,5 +1,5 @@
 import {IRepository} from "../../../../infrastructure/domains/repositories/interfaces/IRepository";
-import {UserEntity} from "../typesql/entities/User";
+import {UserEntity} from "../typesql/entities/UserEntity";
 
 export interface IUserRepository extends IRepository<UserEntity> {
 
